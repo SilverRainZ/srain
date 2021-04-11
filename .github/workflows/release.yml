@@ -50,7 +50,7 @@ jobs:
           --buildtype=release \
           builddir && \
         ninja -C builddir && \
-        DESTDIR=$PWD/$INSTALL_DIR ninja -C builddir install && \
+        DESTDIR=$INSTALL_DIR ninja -C builddir install && \
         .github/workflows/pack-mingw64.sh $INSTALL_DIR/$MINGW_PREFIX $PACKAGE_DIR $PACKAGE_NAME && \
         mv $PACKAGE_NAME ./out
     - name: Upload
