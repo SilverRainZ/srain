@@ -51,7 +51,7 @@ jobs:
           builddir && \
         ninja -C builddir && \
         DESTDIR=$PWD/$INSTALL_DIR ninja -C builddir install && \
-        .github/workflows/pack-mingw64.sh $PWD/$INSTALL_DIR/$MINGW_PREFIX $PACKAGE_DIR $PACKAGE_NAME && \
+        .github/workflows/pack-mingw64.sh $PWD/$INSTALL_DIR$MINGW_PREFIX $PACKAGE_DIR $PACKAGE_NAME && \
         mv $PACKAGE_NAME ./out
     - name: Upload
       run: /mingw64/bin/python3 .github/workflows/release-assets-upload.py
