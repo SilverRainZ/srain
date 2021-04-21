@@ -2,7 +2,6 @@ name: release assets
 on:
   release:
     types: [created]
-  push:
 jobs:
   debiab-buster:
     runs-on: ubuntu-latest
