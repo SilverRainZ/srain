@@ -47,9 +47,6 @@ jobs:
         echo MINGW_PREFIX $MINGW_PREFIX;
         echo MSYS_PREFIX $MSYS_PREFIX;
         meson setup -Ddoc_builders=[] \
-          --prefix=$MINGW_PREFIX \
-          --datadir=$MINGW_PREFIX/share \
-          --sysconfdir=$MINGW_PREFIX/etc \
           --buildtype=release \
           builddir && \
         ninja -C builddir && \
