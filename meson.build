@@ -32,6 +32,7 @@ endif
 prefix = get_option('prefix')
 bin_dir = join_paths(prefix, get_option('bindir'))
 data_dir = join_paths(prefix, get_option('datadir'))
+message('*************** BIN ' + bin_dir)
 pkg_data_dir = join_paths(data_dir, meson.project_name())
 # https://github.com/mesonbuild/meson/issues/825
 pkg_doc_dir = join_paths(data_dir, 'doc', meson.project_name())
