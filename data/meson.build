@@ -16,7 +16,7 @@ desktop = i18n.merge_file(
   output: '@0@.desktop'.format(app_id),
   po_dir: po_dir,
   install: true,
-  install_dir: join_paths(data_dir, 'applications')
+  install_dir: data_dir / 'applications'
 )
 
 gnome = import('gnome')

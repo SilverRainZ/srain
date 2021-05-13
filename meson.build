@@ -6,7 +6,7 @@ project(
   'srain', 'c',
   version: '2.0.0rc0',
   license: 'GPL3',
-  meson_version: '>= 0.46.0'
+  meson_version: '>= 0.53.0'
 )
 
 app_id = 'im.srain.Srain'
@@ -29,20 +29,20 @@ endif
 ############################
 
 prefix = get_option('prefix')
-bin_dir = join_paths(prefix, get_option('bindir'))
-data_dir = join_paths(prefix, get_option('datadir'))
-lib_dir = join_paths(prefix, get_option('libdir'))
-pkg_data_dir = join_paths(data_dir, meson.project_name())
-pkg_doc_dir = join_paths(data_dir, 'doc', meson.project_name())
-pkg_man_dir = join_paths(pkg_doc_dir, 'manual')
-pkg_ref_dir = join_paths(pkg_doc_dir, 'reference')
+bin_dir =prefix / get_option('bindir')
+data_dir = prefix / get_option('datadir')
+lib_dir = prefix / get_option('libdir')
+pkg_data_dir = data_dir / meson.project_name()
+pkg_doc_dir = data_dir / 'doc' / meson.project_name()
+pkg_man_dir = pkg_doc_dir / 'manual'
+pkg_ref_dir = pkg_doc_dir / 'reference'
 # https://github.com/mesonbuild/meson/issues/825
-icons_dir = join_paths(data_dir, 'icons')
-po_dir = join_paths(meson.source_root(), 'po')
-sys_conf_dir = join_paths(prefix, get_option('sysconfdir'))
-pkg_sys_conf_dir = join_paths(sys_conf_dir, meson.project_name())
-pkg_sys_mod_dir = join_paths(lib_dir, meson.project_name(), 'modules')
-pkg_sys_bind_dir = join_paths(pkg_sys_mod_dir, 'loaders')
+icons_dir = data_dir / 'icons'
+po_dir = meson.source_root() / 'po'
+sys_conf_dir = prefix / get_option('sysconfdir')
+pkg_sys_conf_dir = sys_conf_dir / meson.project_name()
+pkg_sys_mod_dir = lib_dir / meson.project_name() / 'modules'
+pkg_sys_bind_dir = pkg_sys_mod_dir / 'loaders'
 
 ####################
 # Meta info header #
@@ -67,7 +67,7 @@ meta_data.set_quoted('PACKAGE_SYS_MOD_DIR', pkg_sys_mod_dir)
 meta_data.set_quoted('PACKAGE_SYS_BIND_DIR', pkg_sys_bind_dir)
 
 build_id_generator = [
-  join_paths(meson.source_root() , 'utils', 'gen-build-id.sh'),
+  meson.source_root() / 'utils' / 'gen-build-id.sh',
   meson.source_root(),
 ]
 
