@@ -15,7 +15,7 @@ default:
 
 .PHONY: build
 build: | $(BUILDDIR)
-	$(MESON) compile -C $(BUILDDIR) -v
+	$(MESON) compile -C $(BUILDDIR)
 
 .PHONY: run
 run: install

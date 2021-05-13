@@ -96,6 +96,7 @@ gi_dep = dependency('gobject-introspection-1.0')
 meta_dep = declare_dependency(sources: meta_h)
 # TODO: sphinx
 gidocgen_dep = dependency('gi-docgen', fallback: ['gi-docgen', 'dummy_dep'])
+adwaita_dep = dependency('libadwaita-1', version: '>= 1.0.0')
 
 ##################
 # Subdirectories #

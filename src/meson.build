@@ -30,7 +30,7 @@ srn_srcs = [
 srn_exec = executable(
   app_exec,
   srn_srcs,
-  dependencies: [glib_dep, gmodule_dep, gtk_dep, gi_dep, meta_dep],
+  dependencies: [glib_dep, gmodule_dep, gtk_dep, gi_dep, adwaita_dep, meta_dep],
   export_dynamic: true,
   install: true,
   install_dir: bin_dir,
@@ -43,6 +43,6 @@ srn_gir = gnome.generate_gir(
   namespace: 'Srn',
   symbol_prefix: 'srn',
   identifier_prefix: 'Srn',
-  includes: ['GObject-2.0', 'Gtk-4.0'],
+  includes: ['GObject-2.0', 'Gtk-4.0', 'Adw-1'],
   install: true,
 )
