@@ -7,7 +7,7 @@ logo_url = "../../data/icons/hicolor/128x128/apps/im.srain.Srain.png"
 authors = "Shengyu Zhang"
 license = "GPL-3.0-or-later"
 description = "@app_desc@"
-dependencies = ["GObject-2.0", "Gtk-4.0"]
+dependencies = ["GObject-2.0", "Gtk-4.0", "Adw-1"]
 devhelp = true
 search_index = true
 
@@ -20,6 +20,11 @@ search_index = true
   name = "GTK"
   description = "The GTK toolkit"
   docs_url = "https://gnome.pages.gitlab.gnome.org/gtk/gtk4/"
+
+  [dependencies."Adw-1"]
+  name = "Adw"
+  description = "Building blocks for modern GNOME applications"
+  docs_url = "https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/"
 
 [theme]
 name = "basic"
